@@ -92,4 +92,4 @@ if __name__ == '__main__':
         add_tracks_to_playlist(sp, playlist_id, new_uris)
         print(f"Added {len(new_uris)} new tracks to playlist '{playlist_name}'.")
     else:
-        print(f"No new tracks to add to '{playlist_name}'.")
+        print(f"No new tracks found for playlist '{playlist_name}'.")
