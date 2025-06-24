@@ -1,4 +1,3 @@
-=======
 # Yandex Music → Spotify Sync
 
 This Python script synchronizes your liked tracks from Yandex Music to a single Spotify playlist. It fetches newly liked tracks on Yandex Music and adds only those not already present in your Spotify playlist.
@@ -46,13 +45,13 @@ This Python script synchronizes your liked tracks from Yandex Music to a single 
 4. **Create a **``** file** in the project root with the following variables:
 
    ```env
-   # Yandex Music
-   YANDEX_TOKEN=your_yandex_oauth_token
-
    # Spotify API
    SPOTIPY_CLIENT_ID=your_spotify_client_id
    SPOTIPY_CLIENT_SECRET=your_spotify_client_secret
    SPOTIPY_REDIRECT_URI=http://127.0.0.1:8888/callback
+   
+   # Yandex Music
+   YANDEX_TOKEN=your_yandex_oauth_token
    ```
 
 ## Spotify App Setup
@@ -63,6 +62,23 @@ This Python script synchronizes your liked tracks from Yandex Music to a single 
    - `http://127.0.0.1:8888/callback`
    - Or `http://[::1]:8888/callback` for IPv6
 4. Save the settings.
+
+## Obtaining a Yandex Music OAuth Token
+
+To extract your Yandex Music token via your browser:
+
+1. (Optional) Open your browser's DevTools and on the **Network** tab enable throttling if desired.
+2. Navigate to the following authorization URL:
+   ```
+   https://oauth.yandex.ru/authorize?response_type=token&client_id=23cabbbdc6cd418abb4b39c32c41195d
+   ```
+3. Log in if prompted and grant access to the application.
+4. After authorization, your browser will briefly redirect to a URL like:
+   ```
+   https://music.yandex.ru/#access_token=AQAAAAAYc***&token_type=bearer&expires_in=31535645
+   ```
+   You need to quickly copy this entire URL before it redirects again.
+5. Extract the token string after `access_token=` and before `&`, and set it as your `YANDEX_TOKEN`.
 
 ## Usage
 
@@ -103,3 +119,4 @@ To keep your Spotify playlist up-to-date, schedule the script:
 ## License
 
 This project is released under the MIT License.
+
