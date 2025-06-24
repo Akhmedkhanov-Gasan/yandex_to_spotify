@@ -23,7 +23,7 @@ This Python script synchronizes your liked tracks from Yandex Music to a single 
 
    ```bash
    git clone https://github.com/Akhmedkhanov-Gasan/yandex_to_spotify.git
-   cd yandex-to-spotify
+   cd yandex_to_spotify
    ```
 
 2. **Create and activate a virtual environment**
