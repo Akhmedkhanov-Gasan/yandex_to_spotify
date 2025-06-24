@@ -1,4 +1,3 @@
-# yandex_to_spotify
 =======
 # Yandex Music → Spotify Sync
 
